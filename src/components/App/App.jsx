@@ -3,6 +3,7 @@ import "./App.css";
 import Description from "../Description/Description.jsx";
 import Feedback from "../Feedback/Feedback.jsx";
 import Options from "../Options/Options.jsx";
+import Notification from "../Notification/Notification.jsx";
 
 function App() {
   const [feedback, setFeedback] = useState({
@@ -18,12 +19,13 @@ function App() {
     }));
   };
 
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+
   return (
     <>
       <Description />
       <Options updateFeedback={updateFeedback} />
-
-      <Feedback feedback={feedback} />
+      {totalFeedback > 0 ? <Feedback feedback={feedback} /> : <Notification />}
     </>
   );
 }
