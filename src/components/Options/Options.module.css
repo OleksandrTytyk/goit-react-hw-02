@@ -1,0 +1,13 @@
+.resetBtn:hover {
+  background-color: #ff2800;
+}
+.goodBtn:hover {
+  color: green;
+}
+.badBtn:hover {
+  color: red;
+}
+
+.optionsBtn {
+  margin-top: 20px;
+}
